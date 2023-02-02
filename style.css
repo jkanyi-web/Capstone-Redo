@@ -440,37 +440,38 @@ h3 {
     gap: 17px;
     padding-bottom: 27px;
   }
-.containerAbout h4 {
-  padding: 30px;
-  text-align: center;
-}
 
-.containerAbout h5 {
-  padding: 0 30px;
-  text-align: center;
-}
+  .containerAbout h4 {
+    padding: 30px;
+    text-align: center;
+  }
 
-.logoInfo h1,
-.logoInfo h4 {
-  margin-top: 30px;
-  padding: 0 30px;
-  text-align: center;
-}
+  .containerAbout h5 {
+    padding: 0 30px;
+    text-align: center;
+  }
 
-.past h4 {
-  width: 95%;
-  text-align: center;
-}
+  .logoInfo h1,
+  .logoInfo h4 {
+    margin-top: 30px;
+    padding: 0 30px;
+    text-align: center;
+  }
 
-.past ul {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: 90%;
-}
+  .past h4 {
+    width: 95%;
+    text-align: center;
+  }
 
-.footer {
-  padding: 10px;
-}
+  .past ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+  }
+
+  .footer {
+    padding: 10px;
+  }
 }
