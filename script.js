@@ -12,99 +12,80 @@ document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click'
   navMenu.classList.remove('active');
 }));
 
-// speakers section
+// Speakers Section - Dynamic
 const speakers = document.querySelector('.speakers');
-speakers.innerHTML = `
-  <h1>Featured Speakers</h1>
-    <div class="orangeLine"></div>
+const fSpeakers = document.createElement('div');
+const ul = document.createElement('ul');
 
-    <div class="speakersContainer">
-      <div class="firstLot">
-        <div class="featuredSpeakers">
-          <div class="image">
-            <img src="./images/profile.jpg" alt="speaker image" class="profileImg">
-          </div>
-          <div class="details">
-            <h1>Victor Kanyi</h1>
-            <h5 class="profession">Professor of Physical health and Biology at Harvard fitness School</h5>
-            <div class="orangeLine"></div>
-            <h6 class="description">Kanyi Victor studies and practices static fitness, and published his seminal book
-              The Wealth of fitness in 2006.</h6>
-          </div>
-        </div>
-
-        <div class="featuredSpeakers">
-          <div class="image">
-            <img src="./images/profile.jpg" alt="speaker image" class="profileImg">
-          </div>
-          <div class="details">
-            <h1>Jupiter Mars</h1>
-            <h5 class="profession">Executive director of the Wikimedia Foundation</h5>
-            <div class="orangeLine"></div>
-            <h6 class="description">Jupiter is the Executive Director of the Wikimedia Foundation, the nonprofit
-              organization that operates Wikimedia.</h6>
-          </div>
-        </div>
-
-        <div class="featuredSpeakers">
-          <div class="image">
-            <img src="./images/profile.jpg" alt="speaker image" class="profileImg">
-          </div>
-          <div class="details">
-            <h1>Catherine Nancy</h1>
-            <h5 class="profession">Berkman Professor of Medicine and Biological Health Studies at Strathmore University
-            </h5>
-            <div class="orangeLine"></div>
-            <h6 class="description">Nancy studies Biology and Advanced Genetics, and published the most sought after
-              fitness educational article, The Power
-              of Biology in 2021
-            </h6>
-          </div>
-        </div>
-      </div>
-
-      <div class="secondLot">
-        <div class="featuredSpeakers">
-          <div class="image">
-            <img src="./images/profile.jpg" alt="speaker image" class="profileImg">
-          </div>
-          <div class="details">
-            <h1>John Collins</h1>
-            <h5 class="profession">Internationally reknown and successful Physician and physical wellness activist</h5>
-            <div class="orangeLine"></div>
-            <h6 class="description">Collins studies Physical wellness, and published his seminal book The Fit Body &
-              Mind in 2011.</h6>
-          </div>
-        </div>
-
-        <div class="featuredSpeakers">
-          <div class="image">
-            <img src="./images/profile.jpg" alt="speaker image" class="profileImg">
-          </div>
-          <div class="details">
-            <h1>Oguzie-Ibeh Richard</h1>
-            <h5 class="profession">Director of Art Centre Nabi and a board member of CC Korea
-            </h5>
-            <div class="orangeLine"></div>
-            <h6 class="description">As the main venue for new media art production in Korea, Richard promotes
-              cross-disiplinary collaboration.</h6>
-          </div>
-        </div>
-
-        <div class="featuredSpeakers">
-          <div class="image">
-            <img src="./images/profile.jpg" alt="speaker image" class="profileImg">
-          </div>
-          <div class="details">
-            <h1>Akachukwu Smart</h1>
-            <h5 class="profession">Berkman Professor of Biological Studies at Harvard Medical School</h5>
-            <div class="orangeLine"></div>
-            <h6 class="description">Smart is an established and successful proactive body builder who has his career set
-              on body building and is thus one of
-              the best candidates to discuss matters physical healt</h6>
-          </div>
-          
-        </div>
-      </div>
-    </div>
+fSpeakers.innerHTML = `
+   <h1>Featured Speakers</h1>
+     <div class="orangeLine"></div>
 `;
+
+speakers.append(fSpeakers);
+speakers.append(ul);
+
+const presentation = document.querySelector('.speakers ul');
+
+const candidates = [
+  {
+    Id: 1,
+    name: 'Victor Kanyi',
+    profession: 'Professor of Physical health and Biology at Harvard fitness School',
+    description: 'Kanyi Victor studies and practices static fitness, and published his seminal book - The Wealth of fitness in 2006.',
+    image: './images/profile.jpg',
+  },
+  {
+    Id: 2,
+    name: 'Jupiter Mars',
+    profession: 'Executive director of the Wikimedia Foundation',
+    description: 'Jupiter is the Executive Director of the Wikimedia Foundation, the nonprofit.',
+    image: './images/profile.jpg',
+  },
+  {
+    Id: 3,
+    name: 'Catherine Nancy',
+    profession: 'Berkman Professor of Medicine and Biological Health Studies at Strathmore University',
+    description: 'Nancy studies Biology and Advanced Genetics, and published the most sought after fitness educational article, The Power of Biology in 2021',
+    image: './images/profile.jpg',
+  },
+  {
+    Id: 4,
+    name: 'John Collins',
+    profession: 'Internationally reknown and successful Physician and physical wellness activist',
+    description: 'Collins studies Physical wellness, and published his seminal book The Fit Body & Mind in 2011',
+    image: './images/profile.jpg',
+  },
+  {
+    Id: 5,
+    name: 'Austin Dunham',
+    profession: 'Professor of Art in Humanitarian Sciences Cambridge University',
+    description: 'Austin Dunham studies and practices static fitness, and published his seminal book - The Wealth of fitness in 2006.',
+    image: './images/profile.jpg',
+  },
+  {
+    Id: 6,
+    name: 'Hassan Abdi',
+    profession: 'Professor of Physical health and Biology at Harvard fitness School',
+    description: 'Hassan studies and practices static fitness, and published his seminal book - The Wealth of fitness in 2006.',
+    image: './images/profile.jpg',
+  },
+];
+
+candidates.forEach((candidate) => {
+  const list = document.createElement('li');
+  list.classList.add(`presenter${candidate.id}`);
+  list.innerHTML = `
+    <div class="speaker-image">
+      <div class="bg"></div>
+      <img src="${candidate.image}" alt="speaker image">
+    </div>
+    <div class="speaker-info">
+      <h1>${candidate.name}</h1>
+      <h5>${candidate.profession}</h5>
+      <div class="orangeLine"></div>
+      <h6>${candidate.description}</h6>
+    </div>  
+  `;
+  presentation.append(list);
+});
