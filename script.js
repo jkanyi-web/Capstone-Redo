@@ -74,7 +74,7 @@ const candidates = [
 
 candidates.forEach((candidate) => {
   const list = document.createElement('li');
-  list.classList.add(`presenter${candidate.id}`);
+  list.classList.add(`speaker${candidate.id}`);
   list.innerHTML = `
     <div class="speaker-image">
       <div class="bg"></div>
